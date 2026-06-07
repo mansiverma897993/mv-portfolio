@@ -130,11 +130,9 @@ function App() {
       setSidebarVisible(true);
     }
   };
-
   const renderActiveComponent = () => {
     if (viewMode === 'code') {
       let codeKey = activeFile;
-      if (activeFile === 'Skills.json') codeKey = 'Skills.tsx'; // fallback to show TSX or make custom JSON code viewer
       if (activeFile === 'ContentCreation.md') codeKey = 'ContentCreation.tsx';
       return <CodeViewer code={simulatedCode[codeKey] || ''} fileName={activeFile} />;
     }

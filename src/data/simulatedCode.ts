@@ -166,6 +166,91 @@ export const Experience: React.FC = () => {
   );
 };`,
 
+  "Skills.json": `{
+  "programmingLanguages": [
+    "C++",
+    "C",
+    "Rust",
+    "Python",
+    "Go (Golang)",
+    "TypeScript"
+  ],
+  "fullStack": {
+    "frontend": [
+      "HTML5",
+      "CSS3",
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Responsive Web Design",
+      "3D Animated UI"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "TypeScript",
+      "RESTful APIs",
+      "JWT Authentication",
+      "Middleware",
+      "CRUD Operations"
+    ]
+  },
+  "databasesAndCache": [
+    "MongoDB",
+    "Mongoose",
+    "PostgreSQL",
+    "MySQL",
+    "SQL",
+    "Prisma ORM",
+    "Redis",
+    "Database Design",
+    "Schema Modeling"
+  ],
+  "devOpsAndCloud": [
+    "AWS",
+    "GCP",
+    "Docker",
+    "CI/CD",
+    "WSL",
+    "Git",
+    "GitHub",
+    "Postman",
+    "Vercel",
+    "Deployment",
+    "API Testing"
+  ],
+  "aiSkills": [
+    "Machine Learning (ML)",
+    "LLMs",
+    "RAG",
+    "Claude Code",
+    "Cursor Skill",
+    "Prompt Engineering"
+  ],
+  "blockchainWeb3": [
+    "Solana",
+    "Rust (Anchor)",
+    "Wallet Adapter",
+    "DeFi Protocols",
+    "AMM",
+    "PDA",
+    "Solidity",
+    "Ethereum",
+    "Smart Contracts",
+    "dApps"
+  ],
+  "coreConcepts": [
+    "Data Structures & Algorithms",
+    "Problem Solving",
+    "OOPs",
+    "DBMS",
+    "Operating Systems",
+    "System Design",
+    "Code Optimization"
+  ]
+}`,
+
   "Skills.tsx": `import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import { ChevronDown, ChevronRight, Terminal } from 'lucide-react';
