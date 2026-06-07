@@ -89,11 +89,12 @@ export const portfolioData: PortfolioData = {
     {
       category: "Programming",
       skills: [
-        { name: "JavaScript", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Python", level: 80 },
-        { name: "Java", level: 85 },
-        { name: "SQL", level: 85 }
+        { name: "C++", level: 90 },
+        { name: "C", level: 85 },
+        { name: "Rust", level: 88 },
+        { name: "Python", level: 90 },
+        { name: "Go (Golang)", level: 80 },
+        { name: "TypeScript", level: 95 }
       ]
     },
     {
@@ -101,30 +102,51 @@ export const portfolioData: PortfolioData = {
       skills: [
         { name: "React", level: 95 },
         { name: "Node.js", level: 90 },
-        { name: "Next.js", level: 85 },
+        { name: "Next.js", level: 92 },
         { name: "Express", level: 90 },
         { name: "Tailwind CSS", level: 95 },
-        { name: "SASS", level: 80 },
-        { name: "HTML5 & CSS3", level: 95 }
+        { name: "GSAP", level: 85 }
       ]
     },
     {
       category: "Database & Cache",
       skills: [
-        { name: "PostgreSQL", level: 88 },
-        { name: "MongoDB", level: 85 },
-        { name: "Redis", level: 80 },
-        { name: "MySQL", level: 85 }
+        { name: "PostgreSQL", level: 90 },
+        { name: "MongoDB", level: 92 },
+        { name: "Redis", level: 85 },
+        { name: "Prisma ORM", level: 90 },
+        { name: "MySQL", level: 88 }
       ]
     },
     {
       category: "DevOps & Cloud",
       skills: [
-        { name: "Docker", level: 80 },
-        { name: "AWS", level: 75 },
-        { name: "Vercel / Netlify", level: 95 },
-        { name: "Git & GitHub", level: 90 },
-        { name: "GitHub Actions", level: 80 }
+        { name: "Docker", level: 85 },
+        { name: "AWS", level: 80 },
+        { name: "GCP", level: 75 },
+        { name: "CI/CD", level: 80 },
+        { name: "Git & GitHub", level: 95 },
+        { name: "WSL", level: 90 }
+      ]
+    },
+    {
+      category: "AI Skills",
+      skills: [
+        { name: "Machine Learning (ML)", level: 80 },
+        { name: "LLMs & RAG", level: 88 },
+        { name: "Claude Code", level: 92 },
+        { name: "Cursor Skill", level: 95 }
+      ]
+    },
+    {
+      category: "Blockchain",
+      skills: [
+        { name: "Solana", level: 90 },
+        { name: "Rust (Anchor)", level: 88 },
+        { name: "Wallet Adapter", level: 85 },
+        { name: "Solidity", level: 80 },
+        { name: "Ethereum", level: 82 },
+        { name: "dApps Development", level: 88 }
       ]
     }
   ],

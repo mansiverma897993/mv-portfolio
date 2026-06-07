@@ -166,19 +166,28 @@ export const ResumeViewer: React.FC = () => {
             </h2>
             <ul style={{ margin: 0, paddingLeft: '16px' }}>
               <li style={{ marginBottom: '3px' }}>
-                <strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), React.js, Tailwind CSS, GSAP, Responsive Web Design, 3D Animated UI
+                <strong>Languages:</strong> C++, C, Rust, Python, Go (Golang), JavaScript (ES6+), TypeScript
+              </li>
+              <li style={{ marginBottom: '3px' }}>
+                <strong>Frontend:</strong> HTML5, CSS3, React.js, Next.js, Tailwind CSS, GSAP, Responsive Web Design, 3D Animated UI
               </li>
               <li style={{ marginBottom: '3px' }}>
                 <strong>Backend:</strong> Node.js, Express.js, TypeScript, RESTful APIs, JWT Authentication, Middleware, CRUD Operations
               </li>
               <li style={{ marginBottom: '3px' }}>
-                <strong>Databases:</strong> MongoDB, Mongoose, PostgreSQL, MySQL, SQL, Database Design, Schema Modeling
+                <strong>Databases & Cache:</strong> MongoDB, Mongoose, PostgreSQL, MySQL, SQL, Prisma ORM, Redis, Database Design, Schema Modeling
               </li>
               <li style={{ marginBottom: '3px' }}>
-                <strong>Core Concepts and Languages:</strong> C++, C, Python, Rust, Data Structures and Algorithms, Problem Solving, OOPs, DBMS, Operating Systems, System Design Basics, Debugging, Code Optimization
+                <strong>DevOps & Cloud:</strong> AWS, GCP, Docker, CI/CD, WSL, Git, GitHub, Postman, Vercel, Deployment, API Testing
               </li>
               <li style={{ marginBottom: '3px' }}>
-                <strong>Developer Tools:</strong> Git, GitHub, Postman, Vercel, Claude Code, Cursor, WSL, Deployment, API Testing
+                <strong>AI Skills:</strong> Machine Learning (ML), LLMs, RAG, Claude Code, Cursor Skill, Prompt Engineering
+              </li>
+              <li style={{ marginBottom: '3px' }}>
+                <strong>Blockchain & Web3:</strong> Solana, Rust (Anchor), Wallet Adapter, DeFi Protocols, AMM, PDA, Solidity, Ethereum, Smart Contracts, dApps
+              </li>
+              <li style={{ marginBottom: '3px' }}>
+                <strong>Core Concepts:</strong> Data Structures and Algorithms, Problem Solving, OOPs, DBMS, Operating Systems, System Design, Code Optimization
               </li>
             </ul>
           </div>
