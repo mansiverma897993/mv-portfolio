@@ -99,96 +99,184 @@ export const ResumeViewer: React.FC = () => {
       }}>
         <div style={{
           width: '100%',
-          maxWidth: '800px',
+          maxWidth: '820px',
           backgroundColor: '#ffffff',
-          color: '#333333',
+          color: '#000000',
           boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-          padding: '48px',
+          padding: '50px 60px',
           borderRadius: '4px',
-          fontFamily: 'serif',
-          lineHeight: '1.5',
-          fontSize: '14px',
+          fontFamily: '"Times New Roman", Times, Georgia, serif',
+          lineHeight: '1.4',
+          fontSize: '13px',
           boxSizing: 'border-box'
         }}>
           {/* Header */}
-          <div style={{ textAlign: 'center', marginBottom: '24px', fontFamily: 'sans-serif' }}>
-            <h1 style={{ margin: '0 0 6px', fontSize: '26px', fontWeight: 700, color: '#111111', letterSpacing: '0.5px' }}>
-              {portfolioData.name}
+          <div style={{ textAlign: 'center', marginBottom: '14px' }}>
+            <h1 style={{ margin: '0 0 4px', fontSize: '28px', fontWeight: 'normal', color: '#000000', letterSpacing: '0.5px' }}>
+              MANSI VERMA
             </h1>
-            <p style={{ margin: '0 0 10px', fontSize: '14px', color: '#666666', fontWeight: 500 }}>
-              {portfolioData.title} &bull; {portfolioData.secondaryTitle}
-            </p>
-            <p style={{ margin: 0, fontSize: '12px', color: '#555555' }}>
-              Email: {portfolioData.email} | GitHub: github.com/mansiverma897993 | LinkedIn: linkedin.com/in/mansi-verma-4794a4328
-            </p>
-          </div>
-
-          <hr style={{ border: 'none', borderTop: '1px solid #dddddd', margin: '16px 0' }} />
-
-          {/* Profile Summary */}
-          <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ textTransform: 'uppercase', fontSize: '13px', margin: '0 0 8px', color: '#007acc', fontFamily: 'sans-serif', letterSpacing: '1px' }}>
-              Summary
-            </h3>
-            <p style={{ margin: 0 }}>
-              {portfolioData.subtitle} Passionate about decentralization protocols, automated developer tools, and building intuitive interactive user interfaces. Contributor to open source emulators and community coding initiatives.
-            </p>
-          </div>
-
-          {/* Education / Skills */}
-          <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ textTransform: 'uppercase', fontSize: '13px', margin: '0 0 8px', color: '#007acc', fontFamily: 'sans-serif', letterSpacing: '1px' }}>
-              Core Competencies
-            </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 24px' }}>
-              {portfolioData.skills.map((category, idx) => (
-                <div key={idx}>
-                  <strong style={{ fontFamily: 'sans-serif', fontSize: '12px', color: '#555555' }}>
-                    {category.category}:
-                  </strong>{' '}
-                  <span style={{ fontSize: '13px' }}>
-                    {category.skills.map(s => s.name).join(', ')}
-                  </span>
-                </div>
-              ))}
+            <div style={{ fontSize: '11px', color: '#111111', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
+              <span>📞 +91-8851562605</span>
+              <span>•</span>
+              <a href="mailto:missmv897@gmail.com" style={{ color: '#000000', textDecoration: 'none' }}>✉ missmv897@gmail.com</a>
+              <span>•</span>
+              <a href="https://www.linkedin.com/in/mansi-verma-4794a4328/" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'underline' }}>LinkedIn</a>
+              <span>•</span>
+              <a href="https://github.com/mansiverma897993" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'underline' }}>GitHub</a>
+              <span>•</span>
+              <a href="https://mansiverma-portfolio.vercel.app" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'underline' }}>Portfolio</a>
+              <span>•</span>
+              <a href="https://leetcode.com/u/mansiverma897993/" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'underline' }}>LeetCode</a>
+              <span>•</span>
+              <a href="https://x.com/MansiVe61115132" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'underline' }}>Twitter</a>
             </div>
           </div>
 
-          {/* Professional Experience */}
-          <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ textTransform: 'uppercase', fontSize: '13px', margin: '0 0 12px', color: '#007acc', fontFamily: 'sans-serif', letterSpacing: '1px' }}>
-              Work Experience
-            </h3>
-            {portfolioData.experience.map((exp, idx) => (
-              <div key={idx} style={{ marginBottom: '14px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', color: '#222222', fontSize: '13px', fontFamily: 'sans-serif' }}>
-                  <span>{exp.role} @ {exp.company}</span>
-                  <span style={{ fontWeight: 'normal', color: '#666666' }}>{exp.period}</span>
-                </div>
-                <p style={{ margin: '4px 0 0', fontSize: '13px', color: '#444444' }}>
-                  {exp.description}
-                </p>
-              </div>
-            ))}
+          {/* Section: SUMMARY */}
+          <div style={{ marginBottom: '14px' }}>
+            <h2 style={{ 
+              fontSize: '13px', 
+              fontWeight: 'bold', 
+              textTransform: 'uppercase', 
+              margin: '0 0 4px', 
+              borderBottom: '1px solid #000000',
+              paddingBottom: '2px',
+              letterSpacing: '0.5px'
+            }}>
+              SUMMARY
+            </h2>
+            <p style={{ margin: 0, textAlign: 'justify' }}>
+              Full-Stack Software Developer with experience in building scalable web applications, modern 3D animated frontends, and production-ready backend systems. Skilled in JavaScript, React.js, Next.js, Tailwind CSS, Node.js, and Express.js for developing responsive UI and RESTful APIs. Strong foundation in Data Structures, Algorithms, problem-solving, and debugging. Also experienced in Blockchain Development using Solana, Rust, TypeScript, and Web3 integration.
+            </p>
           </div>
 
-          {/* Projects */}
-          <div>
-            <h3 style={{ textTransform: 'uppercase', fontSize: '13px', margin: '0 0 12px', color: '#007acc', fontFamily: 'sans-serif', letterSpacing: '1px' }}>
-              Key Projects
-            </h3>
-            {portfolioData.projects.map((proj, idx) => (
-              <div key={idx} style={{ marginBottom: '12px' }}>
-                <strong style={{ fontSize: '13px', color: '#222222' }}>{proj.title}</strong>{' '}
-                <span style={{ fontSize: '12px', color: '#666666', fontFamily: 'sans-serif' }}>
-                  ({proj.tags.join(', ')})
-                </span>
-                <p style={{ margin: '2px 0 0', fontSize: '13px', color: '#444444' }}>
-                  {proj.description}
-                </p>
-              </div>
-            ))}
+          {/* Section: TECHNICAL SKILLS */}
+          <div style={{ marginBottom: '14px' }}>
+            <h2 style={{ 
+              fontSize: '13px', 
+              fontWeight: 'bold', 
+              textTransform: 'uppercase', 
+              margin: '0 0 4px', 
+              borderBottom: '1px solid #000000',
+              paddingBottom: '2px',
+              letterSpacing: '0.5px'
+            }}>
+              TECHNICAL SKILLS
+            </h2>
+            <ul style={{ margin: 0, paddingLeft: '16px' }}>
+              <li style={{ marginBottom: '3px' }}>
+                <strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), React.js, Tailwind CSS, GSAP, Responsive Web Design, 3D Animated UI
+              </li>
+              <li style={{ marginBottom: '3px' }}>
+                <strong>Backend:</strong> Node.js, Express.js, TypeScript, RESTful APIs, JWT Authentication, Middleware, CRUD Operations
+              </li>
+              <li style={{ marginBottom: '3px' }}>
+                <strong>Databases:</strong> MongoDB, Mongoose, PostgreSQL, MySQL, SQL, Database Design, Schema Modeling
+              </li>
+              <li style={{ marginBottom: '3px' }}>
+                <strong>Core Concepts and Languages:</strong> C++, C, Python, Rust, Data Structures and Algorithms, Problem Solving, OOPs, DBMS, Operating Systems, System Design Basics, Debugging, Code Optimization
+              </li>
+              <li style={{ marginBottom: '3px' }}>
+                <strong>Developer Tools:</strong> Git, GitHub, Postman, Vercel, Claude Code, Cursor, WSL, Deployment, API Testing
+              </li>
+            </ul>
           </div>
+
+          {/* Section: EXPERIENCE */}
+          <div style={{ marginBottom: '14px' }}>
+            <h2 style={{ 
+              fontSize: '13px', 
+              fontWeight: 'bold', 
+              textTransform: 'uppercase', 
+              margin: '0 0 6px', 
+              borderBottom: '1px solid #000000',
+              paddingBottom: '2px',
+              letterSpacing: '0.5px'
+            }}>
+              EXPERIENCE
+            </h2>
+            
+            {/* Neeyat AI */}
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
+                <span>Backend Engineer Intern — Neeyat AI</span>
+                <span style={{ fontWeight: 'normal', fontStyle: 'italic' }}>Internship</span>
+              </div>
+              <ul style={{ margin: '2px 0 0', paddingLeft: '16px' }}>
+                <li style={{ marginBottom: '2px' }}>Worked on backend development and scalable server-side systems using Node.js, Express.js, and MongoDB.</li>
+                <li style={{ marginBottom: '2px' }}>Designed and improved RESTful APIs, JWT Based authentication workflows, and database-driven backend services.</li>
+                <li style={{ marginBottom: '2px' }}>Improved API performance, backend architecture, deployment workflows, Code Optimization.</li>
+              </ul>
+            </div>
+
+            {/* Open Source */}
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
+                <span>Open Source Contributor — Summer of Bitcoin + LFX Mentorship</span>
+                <span style={{ fontWeight: 'normal', fontStyle: 'italic' }}>Open Source</span>
+              </div>
+              <ul style={{ margin: '2px 0 0', paddingLeft: '16px' }}>
+                <li style={{ marginBottom: '2px' }}>Contributed to open-source systems and got shortlisted in the Summer of Bitcoin program.</li>
+                <li style={{ marginBottom: '2px' }}>Worked on LFX mentorship projects including contributions to Meshery ecosystem and community-driven development.</li>
+                <li style={{ marginBottom: '2px' }}>Collaborated with maintainers on real-world engineering tasks, issue resolution, and backend improvements.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Section: PROJECTS */}
+          <div style={{ marginBottom: '14px' }}>
+            <h2 style={{ 
+              fontSize: '13px', 
+              fontWeight: 'bold', 
+              textTransform: 'uppercase', 
+              margin: '0 0 6px', 
+              borderBottom: '1px solid #000000',
+              paddingBottom: '2px',
+              letterSpacing: '0.5px'
+            }}>
+              PROJECTS
+            </h2>
+
+            {/* Roow */}
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
+                <span>Roow : AI Pipeline Builder (YC Startup Project) — Full-Stack Project</span>
+                <span style={{ fontWeight: 'normal' }}>Jul 2025 – Aug 2025</span>
+              </div>
+              <ul style={{ margin: '2px 0 0', paddingLeft: '16px' }}>
+                <li style={{ marginBottom: '2px' }}>Developed a visual AI workflow builder for a YC startup using React.js, TypeScript, Tailwind CSS, and React Flow with drag-and-drop node architecture for building complex pipeline systems.</li>
+                <li style={{ marginBottom: '2px' }}>Built backend validation services using FastAPI and Python to parse nodes and edges, perform graph construction, cycle detection, and topological sorting before execution.</li>
+                <li style={{ marginBottom: '2px' }}>Optimized rendering loops and flow state updates, reducing render times by 40% for large graphs with 100+ elements.</li>
+              </ul>
+            </div>
+
+            {/* VedaAI */}
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
+                <span>VedaAI : Cognitive AI Assessment Suite — Full-Stack Project</span>
+                <span></span>
+              </div>
+              <ul style={{ margin: '2px 0 0', paddingLeft: '16px' }}>
+                <li style={{ marginBottom: '2px' }}>Built an end-to-end AI agent platform that evaluates developers' skills through voice-interactive and coding assessments.</li>
+                <li style={{ marginBottom: '2px' }}>Configured a Python backend with LangChain and Llama3 for real-time speech evaluation and multi-turn audio conversation.</li>
+                <li style={{ marginBottom: '2px' }}>Programmed a responsive assessment dashboard in Next.js, showing real-time progress indicators, system logs, and detailed performance metrics.</li>
+              </ul>
+            </div>
+
+            {/* DNA DAO */}
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
+                <span>DNA DAO : Decentralized Bio-Governance Platform — Web3 Project</span>
+                <span></span>
+              </div>
+              <ul style={{ margin: '2px 0 0', paddingLeft: '16px' }}>
+                <li style={{ marginBottom: '2px' }}>Developed a decentralized science governance portal on the Solana blockchain for voting and funding genomic research proposals.</li>
+                <li style={{ marginBottom: '2px' }}>Coded Anchor Rust smart contracts for escrow, proposal voting, and fractionalized NFT token rewards.</li>
+                <li style={{ marginBottom: '2px' }}>Designed a futuristic glassmorphic UI using React and Tailwind CSS with real-time Solana network RPC status polling.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
