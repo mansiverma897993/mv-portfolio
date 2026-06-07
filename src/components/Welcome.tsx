@@ -87,6 +87,12 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNavigate }) => {
                 </button>
               </li>
               <li>
+                <button className="link-btn" onClick={() => window.open(portfolioData.resumeUrl || '/resume.pdf', '_blank')}>
+                  <span className="bullet-symbol">🗎</span>
+                  <span>View Resume PDF...</span>
+                </button>
+              </li>
+              <li>
                 <button className="link-btn" onClick={() => onNavigate('OpenSource.tsx')}>
                   <span className="bullet-symbol">#</span>
                   <span>Open Source Contribution...</span>

@@ -11,6 +11,7 @@ import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Achievements } from './components/Achievements';
 import { Contact } from './components/contact';
+import { ResumeViewer } from './components/ResumeViewer';
 import { OpenSource } from './components/OpenSource';
 import { Community } from './components/Community';
 import { ContentCreation } from './components/ContentCreation';
@@ -149,6 +150,8 @@ function App() {
         return <Projects />;
       case 'Achievements.tsx':
         return <Achievements />;
+      case 'resume.pdf':
+        return <ResumeViewer />;
       case 'contact.tsx':
         return <Contact />;
       case 'OpenSource.tsx':
@@ -263,6 +266,7 @@ function App() {
     'Skills.json', 
     'Projects.tsx', 
     'Achievements.tsx',
+    'resume.pdf',
     'contact.tsx', 
     'OpenSource.tsx', 
     'Community.tsx', 
@@ -279,6 +283,7 @@ function App() {
 
   const renderFileIcon = (file: string) => {
     if (file === 'LICENSE') return <FileText size={14} style={{ color: '#b3b3b3', marginRight: '6px', flexShrink: 0 }} />;
+    if (file === 'resume.pdf') return <FileText size={14} style={{ color: '#ff5555', marginRight: '6px', flexShrink: 0 }} />;
     if (file.endsWith('.json')) return <JsonIcon />;
     if (file.endsWith('.md')) return <MarkdownIcon />;
     return <ReactIcon />;
@@ -418,6 +423,13 @@ function App() {
                       >
                         <ReactIcon />
                         <span>Achievements.tsx</span>
+                      </button>
+                      <button 
+                        className={`file-item-btn ${activeFile === 'resume.pdf' ? 'active' : ''}`}
+                        onClick={() => openFileHandler('resume.pdf')}
+                      >
+                        <FileText size={14} style={{ marginRight: '6px', color: '#e05a47', flexShrink: 0 }} />
+                        <span>resume.pdf</span>
                       </button>
                       <button 
                         className={`file-item-btn ${activeFile === 'contact.tsx' ? 'active' : ''}`}

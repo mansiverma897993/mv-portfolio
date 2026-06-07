@@ -48,6 +48,7 @@ export interface PortfolioData {
   skills: SkillCategory[];
   projects: Project[];
   certificates?: CertificateItem[];
+  resumeUrl?: string;
 }
 
 export const portfolioData: PortfolioData = {
@@ -55,7 +56,8 @@ export const portfolioData: PortfolioData = {
   title: "Full Stack Software Developer",
   secondaryTitle: "Blockchain Developer, AI Evangelist",
   subtitle: "Building full-stack cloud applications, developer tools, and interactive experiences.",
-  email: "mansi.verma@example.com",
+  resumeUrl: "https://drive.google.com/file/d/11SlM_7AdR_TNV3rbJCZh_x4hSWNyOVWh/view?usp=drive_link",
+  email: "missmv897@gmail.com",
   socials: {
     linkedin: "https://www.linkedin.com/in/mansi-verma-4794a4328/",
     github: "https://github.com/mansiverma897993",
