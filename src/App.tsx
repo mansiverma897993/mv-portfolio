@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { 
   Files, Search, GitBranch, Play, Blocks, User, Settings, 
   ChevronDown, ChevronRight, X, Eye, Code as CodeIcon,
-  RefreshCw, Terminal, Bell
+  RefreshCw, Terminal, Bell, FileText
 } from 'lucide-react';
 import { portfolioData } from './data/portfolioData';
 import { Welcome } from './components/Welcome';
 import { Experience } from './components/Experience';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
+import { Achievements } from './components/Achievements';
 import { Contact } from './components/contact';
 import { OpenSource } from './components/OpenSource';
 import { Community } from './components/Community';
@@ -146,6 +147,8 @@ function App() {
         return <Skills />;
       case 'Projects.tsx':
         return <Projects />;
+      case 'Achievements.tsx':
+        return <Achievements />;
       case 'contact.tsx':
         return <Contact />;
       case 'OpenSource.tsx':
@@ -160,6 +163,8 @@ function App() {
         return <Startup />;
       case 'Settings.json':
         return <CodeViewer code={simulatedCode['Settings.json']} fileName="Settings.json" />;
+      case 'LICENSE':
+        return <CodeViewer code={simulatedCode['LICENSE']} fileName="LICENSE" />;
       default:
         return (
           <div className="watermark-container">
@@ -257,13 +262,15 @@ function App() {
     'Experience.tsx', 
     'Skills.json', 
     'Projects.tsx', 
+    'Achievements.tsx',
     'contact.tsx', 
     'OpenSource.tsx', 
     'Community.tsx', 
     'ContentCreation.md', 
     'Learning.tsx', 
     'Startup.tsx', 
-    'Settings.json'
+    'Settings.json',
+    'LICENSE'
   ];
 
   const filteredFiles = searchQuery 
@@ -271,6 +278,7 @@ function App() {
     : allFiles;
 
   const renderFileIcon = (file: string) => {
+    if (file === 'LICENSE') return <FileText size={14} style={{ color: '#b3b3b3', marginRight: '6px', flexShrink: 0 }} />;
     if (file.endsWith('.json')) return <JsonIcon />;
     if (file.endsWith('.md')) return <MarkdownIcon />;
     return <ReactIcon />;
@@ -405,6 +413,13 @@ function App() {
                         <span>Projects.tsx</span>
                       </button>
                       <button 
+                        className={`file-item-btn ${activeFile === 'Achievements.tsx' ? 'active' : ''}`}
+                        onClick={() => openFileHandler('Achievements.tsx')}
+                      >
+                        <ReactIcon />
+                        <span>Achievements.tsx</span>
+                      </button>
+                      <button 
                         className={`file-item-btn ${activeFile === 'contact.tsx' ? 'active' : ''}`}
                         onClick={() => openFileHandler('contact.tsx')}
                       >
@@ -476,6 +491,13 @@ function App() {
                       >
                         <JsonIcon />
                         <span>Settings.json</span>
+                      </button>
+                      <button 
+                        className={`file-item-btn ${activeFile === 'LICENSE' ? 'active' : ''}`}
+                        onClick={() => openFileHandler('LICENSE')}
+                      >
+                        <FileText size={14} style={{ marginRight: '6px', color: '#858585', flexShrink: 0 }} />
+                        <span>LICENSE</span>
                       </button>
                     </div>
                   )}

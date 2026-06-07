@@ -598,5 +598,70 @@ export const Startup: React.FC = () => {
   "portfolio.version": "2.0.0",
   "portfolio.status": "Open to select SDE roles",
   "portfolio.deployment": "Vercel Direct"
-}`
+}`,
+
+  "LICENSE": `MIT License
+
+Copyright (c) 2026 MAN$I VERMA
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.`,
+
+  "Achievements.tsx": `import React from 'react';
+import { portfolioData } from '../data/portfolioData';
+import { ExternalLink, Calendar, ShieldCheck } from 'lucide-react';
+
+export const Achievements: React.FC = () => {
+  const certificates = portfolioData.certificates || [];
+
+  return (
+    <div className="projects-container fade-in">
+      <h2>Achievements & Certifications</h2>
+      <p className="section-desc">Professional certifications, cloud credentials, and developer badges.</p>
+      
+      <div className="projects-grid-list">
+        {certificates.map((cert, idx) => (
+          <div key={idx} className="project-card-item">
+            <div className="project-card-visual" style={{ background: 'linear-gradient(135deg, #1e1e3f 0%, #0c0c14 100%)' }}>
+              <img src={cert.image} alt={cert.title} className="cert-badge-img" />
+            </div>
+            <div className="project-card-body">
+              <div className="cert-issuer">
+                <ShieldCheck size={16} />
+                <span>{cert.issuer}</span>
+              </div>
+              <h3 className="project-title">{cert.title}</h3>
+              <p className="project-desc">{cert.description}</p>
+              <div className="cert-date">
+                <Calendar size={12} />
+                <span>Issued: {cert.issueDate}</span>
+              </div>
+              <div className="project-action-links">
+                <a href={cert.verificationLink} className="project-link-btn primary-btn">
+                  <ExternalLink size={14} />
+                  <span>Verify Credential</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};`
 };

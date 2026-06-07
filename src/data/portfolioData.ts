@@ -17,6 +17,15 @@ export interface ExperienceItem {
   current?: boolean;
 }
 
+export interface CertificateItem {
+  title: string;
+  issuer: string;
+  issueDate: string;
+  description: string;
+  image: string;
+  verificationLink: string;
+}
+
 export interface SkillCategory {
   category: string;
   skills: { name: string; icon?: string; level?: number }[];
@@ -38,6 +47,7 @@ export interface PortfolioData {
   experience: ExperienceItem[];
   skills: SkillCategory[];
   projects: Project[];
+  certificates?: CertificateItem[];
 }
 
 export const portfolioData: PortfolioData = {
@@ -149,6 +159,32 @@ export const portfolioData: PortfolioData = {
       tags: ["Next.js", "TypeScript", "CSS Modules", "LLM APIs"],
       liveLink: "https://chatai-playground.vercel.app",
       githubLink: "https://github.com/mansiverma/chatai-playground"
+    }
+  ],
+  certificates: [
+    {
+      title: "AWS Certified Solutions Architect",
+      issuer: "Amazon Web Services (AWS)",
+      issueDate: "May 2026",
+      description: "Validates cloud architecture design, serverless compute, microservice orchestration, secure data storage, and global infrastructure scaling.",
+      image: "/aws_cert.png",
+      verificationLink: "https://github.com/mansiverma897993"
+    },
+    {
+      title: "Solana Anchor Developer Certification",
+      issuer: "Solana Foundation / Anchor",
+      issueDate: "March 2026",
+      description: "Validates Rust smart contract structures, Solana program architecture, account state serialization, security constraints, and custom DAO governance modules.",
+      image: "/solana_cert.png",
+      verificationLink: "https://github.com/mansiverma897993"
+    },
+    {
+      title: "Advanced React & Next.js Professional",
+      issuer: "Meta Frontend Certifications",
+      issueDate: "January 2026",
+      description: "Validates advanced component trees, concurrent features, server-side rendering, hydration metrics, custom state machines, and high-performance Webpack/Vite bundlers.",
+      image: "/react_cert.png",
+      verificationLink: "https://github.com/mansiverma897993"
     }
   ]
 };
