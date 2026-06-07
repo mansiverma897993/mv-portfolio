@@ -200,26 +200,26 @@ export const ResumeViewer: React.FC = () => {
             {/* Neeyat AI */}
             <div style={{ marginBottom: '8px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
-                <span>Backend Engineer Intern — Neeyat AI</span>
-                <span style={{ fontWeight: 'normal', fontStyle: 'italic' }}>Internship</span>
+                <span>Full Stack Software Developer — Neeyat AI</span>
+                <span style={{ fontWeight: 'normal' }}>Mar 2026 – Present</span>
               </div>
               <ul style={{ margin: '2px 0 0', paddingLeft: '16px' }}>
-                <li style={{ marginBottom: '2px' }}>Worked on backend development and scalable server-side systems using Node.js, Express.js, and MongoDB.</li>
-                <li style={{ marginBottom: '2px' }}>Designed and improved RESTful APIs, JWT Based authentication workflows, and database-driven backend services.</li>
-                <li style={{ marginBottom: '2px' }}>Improved API performance, backend architecture, deployment workflows, Code Optimization.</li>
+                <li style={{ marginBottom: '2px' }}>Engineered scalable RESTful APIs and optimized database queries to enhance core platform performance.</li>
+                <li style={{ marginBottom: '2px' }}>Worked on backend and full-stack systems using Node.js, Express.js, and MongoDB.</li>
+                <li style={{ marginBottom: '2px' }}>Designed and improved RESTful APIs, JWT authentication, and database-driven backend services.</li>
               </ul>
             </div>
 
-            {/* Open Source */}
+            {/* CoE AI Skills Lab */}
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
-                <span>Open Source Contributor — Summer of Bitcoin + LFX Mentorship</span>
-                <span style={{ fontWeight: 'normal', fontStyle: 'italic' }}>Open Source</span>
+                <span>Blockchain Lead & Coordinator — CoE AI Skills Lab, KIET</span>
+                <span style={{ fontWeight: 'normal' }}>Feb 2026 – Present</span>
               </div>
               <ul style={{ margin: '2px 0 0', paddingLeft: '16px' }}>
-                <li style={{ marginBottom: '2px' }}>Contributed to open-source systems and got shortlisted in the Summer of Bitcoin program.</li>
-                <li style={{ marginBottom: '2px' }}>Worked on LFX mentorship projects including contributions to Meshery ecosystem and community-driven development.</li>
-                <li style={{ marginBottom: '2px' }}>Collaborated with maintainers on real-world engineering tasks, issue resolution, and backend improvements.</li>
+                <li style={{ marginBottom: '2px' }}>Led the planning and execution of blockchain practicals, workshops, and bootcamps under the AI Skills Lab Centre of Excellence (CoE).</li>
+                <li style={{ marginBottom: '2px' }}>Coordinated with faculty, industry experts, and student teams to deliver hands-on, industry-relevant training programs.</li>
+                <li style={{ marginBottom: '2px' }}>Guided participants through blockchain concepts and applications while ensuring smooth operations and high engagement across domains.</li>
               </ul>
             </div>
           </div>

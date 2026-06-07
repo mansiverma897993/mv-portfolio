@@ -67,31 +67,22 @@ export const portfolioData: PortfolioData = {
   },
   experience: [
     {
-      role: "Full Stack Engineer",
-      company: "Entropretty",
-      period: "Feb 2025 - Present",
+      role: "Full Stack Software Developer",
+      company: "Neeyat AI",
+      period: "Mar 2026 - Present",
       location: "Remote, India",
-      description: "Leading the development of local emulators and devtools. Designed a high-throughput mock interface for cloud service behaviors, reducing test latency by 80%. Maintained Maven-based Java server integrations and modern React/Vite dashboards.",
-      tags: ["React", "TypeScript", "Java", "Spring Boot", "AWS Athena", "Maven", "Docker", "Tailwind CSS"],
+      description: "Engineered scalable RESTful APIs and optimized database queries to enhance core platform performance. Worked on backend and full-stack systems using Node.js, Express.js, and MongoDB. Designed and improved RESTful APIs, JWT authentication, and database-driven backend services.",
+      tags: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "REST APIs", "JWT", "Code Optimization"],
       current: true
     },
     {
-      role: "Software Development Engineer I",
-      company: "DevStudio Technologies",
-      period: "Aug 2023 - Feb 2025",
-      location: "Noida, India",
-      description: "Engineered scalable web applications and REST APIs. Built real-time collaborative whiteboards and documentation workspaces using WebSockets, reducing synchronization conflicts by 95%.",
-      tags: ["React", "Next.js", "Node.js", "Express", "PostgreSQL", "SQL", "Redis", "Generative AI"],
-      current: false
-    },
-    {
-      role: "Associate Software Engineer",
-      company: "Innovate Solutions",
-      period: "Jun 2022 - Aug 2023",
-      location: "New Delhi, India",
-      description: "Implemented front-end modules and clean UI components from Figma specifications. Developed dashboard visualizations and analytics portals handling millions of monthly data points.",
-      tags: ["JavaScript", "HTML5", "CSS3", "Bootstrap", "SASS", "MongoDB", "Git"],
-      current: false
+      role: "Blockchain Lead & Coordinator",
+      company: "CoE AI Skills Lab, KIET",
+      period: "Feb 2026 - Present",
+      location: "Ghaziabad, India",
+      description: "Led the planning and execution of blockchain practicals, workshops, and bootcamps under the AI Skills Lab Centre of Excellence (CoE). Coordinated with faculty, industry experts, and student teams to deliver hands-on, industry-relevant training programs. Guided participants through blockchain concepts and applications while ensuring smooth operations and high engagement across domains.",
+      tags: ["Blockchain", "AI", "Solana", "Rust", "Anchor", "Smart Contracts", "Technical Leadership"],
+      current: true
     }
   ],
   skills: [
