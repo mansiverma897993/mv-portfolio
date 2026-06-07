@@ -1,0 +1,20 @@
+/* Reset and core root styling for VSCode Portfolio */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0c0c0c;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #cccccc;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  border: none;
+  min-height: 100vh;
+}

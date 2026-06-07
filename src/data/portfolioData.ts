@@ -1,0 +1,154 @@
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  liveLink: string;
+  githubLink?: string;
+}
+
+export interface ExperienceItem {
+  role: string;
+  company: string;
+  period: string;
+  location: string;
+  description: string;
+  tags: string[];
+  current?: boolean;
+}
+
+export interface SkillCategory {
+  category: string;
+  skills: { name: string; icon?: string; level?: number }[];
+}
+
+export interface PortfolioData {
+  name: string;
+  title: string;
+  secondaryTitle?: string;
+  subtitle: string;
+  email: string;
+  socials: {
+    linkedin: string;
+    github: string;
+    twitter: string;
+    linktree?: string;
+    youtube?: string;
+  };
+  experience: ExperienceItem[];
+  skills: SkillCategory[];
+  projects: Project[];
+}
+
+export const portfolioData: PortfolioData = {
+  name: "MAN$I VERMA",
+  title: "Full Stack Software Developer",
+  secondaryTitle: "Blockchain Developer, AI Evangelist",
+  subtitle: "Building full-stack cloud applications, developer tools, and interactive experiences.",
+  email: "mansi.verma@example.com",
+  socials: {
+    linkedin: "https://www.linkedin.com/in/mansi-verma-4794a4328/",
+    github: "https://github.com/mansiverma897993",
+    twitter: "https://x.com/MansiVe61115132?t=cZMkDa3EYq1LpVr-BXoZ3g&s=09",
+    linktree: "https://linktr.ee/MANSIVERMA?utm_source=linktree_profile_share&ltsid=3f471ea5-2106-4ba3-b890-c162ed3528d4",
+    youtube: "https://www.youtube.com/@expressbymansi"
+  },
+  experience: [
+    {
+      role: "Full Stack Engineer",
+      company: "Entropretty",
+      period: "Feb 2025 - Present",
+      location: "Remote, India",
+      description: "Leading the development of local emulators and devtools. Designed a high-throughput mock interface for cloud service behaviors, reducing test latency by 80%. Maintained Maven-based Java server integrations and modern React/Vite dashboards.",
+      tags: ["React", "TypeScript", "Java", "Spring Boot", "AWS Athena", "Maven", "Docker", "Tailwind CSS"],
+      current: true
+    },
+    {
+      role: "Software Development Engineer I",
+      company: "DevStudio Technologies",
+      period: "Aug 2023 - Feb 2025",
+      location: "Noida, India",
+      description: "Engineered scalable web applications and REST APIs. Built real-time collaborative whiteboards and documentation workspaces using WebSockets, reducing synchronization conflicts by 95%.",
+      tags: ["React", "Next.js", "Node.js", "Express", "PostgreSQL", "SQL", "Redis", "Generative AI"],
+      current: false
+    },
+    {
+      role: "Associate Software Engineer",
+      company: "Innovate Solutions",
+      period: "Jun 2022 - Aug 2023",
+      location: "New Delhi, India",
+      description: "Implemented front-end modules and clean UI components from Figma specifications. Developed dashboard visualizations and analytics portals handling millions of monthly data points.",
+      tags: ["JavaScript", "HTML5", "CSS3", "Bootstrap", "SASS", "MongoDB", "Git"],
+      current: false
+    }
+  ],
+  skills: [
+    {
+      category: "Programming",
+      skills: [
+        { name: "JavaScript", level: 95 },
+        { name: "TypeScript", level: 90 },
+        { name: "Python", level: 80 },
+        { name: "Java", level: 85 },
+        { name: "SQL", level: 85 }
+      ]
+    },
+    {
+      category: "Full-Stack Development",
+      skills: [
+        { name: "React", level: 95 },
+        { name: "Node.js", level: 90 },
+        { name: "Next.js", level: 85 },
+        { name: "Express", level: 90 },
+        { name: "Tailwind CSS", level: 95 },
+        { name: "SASS", level: 80 },
+        { name: "HTML5 & CSS3", level: 95 }
+      ]
+    },
+    {
+      category: "Database & Cache",
+      skills: [
+        { name: "PostgreSQL", level: 88 },
+        { name: "MongoDB", level: 85 },
+        { name: "Redis", level: 80 },
+        { name: "MySQL", level: 85 }
+      ]
+    },
+    {
+      category: "DevOps & Cloud",
+      skills: [
+        { name: "Docker", level: 80 },
+        { name: "AWS", level: 75 },
+        { name: "Vercel / Netlify", level: 95 },
+        { name: "Git & GitHub", level: 90 },
+        { name: "GitHub Actions", level: 80 }
+      ]
+    }
+  ],
+  projects: [
+    {
+      title: "AthenaMock",
+      description: "A developer emulator for AWS Athena query execution, supporting SQL parsing, Athena metadata, and custom WorkGroup deletion rules with validation checks.",
+      image: "athenamock",
+      tags: ["Java", "Spring Boot", "AWS Athena", "Maven", "React"],
+      liveLink: "https://github.com/mansiverma/athenamock",
+      githubLink: "https://github.com/mansiverma/athenamock"
+    },
+    {
+      title: "VSCode Portfolio Theme",
+      description: "An elegant, interactive portfolio mimicking the VS Code editor UI, with real file structures, syntax-highlighted code views, and a interactive contact console.",
+      image: "vscode_portfolio",
+      tags: ["React", "TypeScript", "Vite", "Vanilla CSS", "Vercel"],
+      liveLink: "https://mansiverma-portfolio.vercel.app",
+      githubLink: "https://github.com/mansiverma/vscode-portfolio"
+    },
+    {
+      title: "ChatAI Playground",
+      description: "A beautiful OpenAI and Claude client interface with session storage, custom prompt recipes, markdown tables formatting, and code-block copy functionalities.",
+      image: "chatai_playground",
+      tags: ["Next.js", "TypeScript", "CSS Modules", "LLM APIs"],
+      liveLink: "https://chatai-playground.vercel.app",
+      githubLink: "https://github.com/mansiverma/chatai-playground"
+    }
+  ]
+};
