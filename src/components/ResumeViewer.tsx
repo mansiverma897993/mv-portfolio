@@ -94,6 +94,7 @@ export const ResumeViewer: React.FC = () => {
         overflowY: 'auto',
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'flex-start',
         padding: '24px 16px',
         backgroundColor: '#181818'
       }}>
