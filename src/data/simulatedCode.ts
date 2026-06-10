@@ -703,7 +703,7 @@ export const Community: React.FC = () => {
 };`,
 
   "ContentCreation.tsx": `import React from 'react';
-import { BookOpen, Youtube } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
 export const ContentCreation: React.FC = () => {
   const media = [
