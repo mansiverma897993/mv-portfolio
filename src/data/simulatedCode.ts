@@ -703,17 +703,25 @@ export const Community: React.FC = () => {
 };`,
 
   "ContentCreation.tsx": `import React from 'react';
-import { Youtube, BookOpen, PenTool } from 'lucide-react';
+import { BookOpen, PenTool, Youtube } from 'lucide-react';
 
 export const ContentCreation: React.FC = () => {
   const media = [
     {
       title: "YouTube Tech Channel (@expressbymansi)",
-      role: "Video Creator",
-      details: "Creating educational tutorials on Express.js, TypeScript patterns, and backend system designs. Focused on making complex concepts simple.",
+      role: "Video Creator & Podcaster",
+      details: "Creating educational tutorials, podcasts, and guidance videos on blockchain development, AI integration, latest technologies, and technical career roadmaps.",
       link: "https://www.youtube.com/@expressbymansi",
-      icon: Youtube,
+      image: "/ebm_logo.png",
       color: '#ff0000'
+    },
+    {
+      title: "Instagram (@expressbymansi)",
+      role: "Tech Influencer & Creator",
+      details: "Sharing daily programming tips, career guidance reels, developer humor, and updates on blockchain & AI initiatives.",
+      link: "https://www.instagram.com/expressbymansi",
+      image: "/mansi_avatar.png",
+      color: '#e1306c'
     },
     {
       title: "Medium & Dev.to Technical Blogs",
@@ -742,13 +750,29 @@ export const ContentCreation: React.FC = () => {
           const Icon = m.icon;
           return (
             <div key={m.title} className="blog-card click-card" style={{ borderLeftColor: m.color }} onClick={() => window.open(m.link, '_blank')}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <Icon size={18} style={{ color: m.color }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                {m.image ? (
+                  <img 
+                    src={m.image} 
+                    alt={m.title} 
+                    style={{ 
+                      width: '32px', 
+                      height: '32px', 
+                      borderRadius: '50%', 
+                      objectFit: 'cover',
+                      border: \`1.5px solid \${m.color}\`,
+                      backgroundColor: '#fff',
+                      padding: '1px'
+                    }} 
+                  />
+                ) : Icon ? (
+                  <Icon size={18} style={{ color: m.color }} />
+                ) : null}
                 <h3 style={{ margin: 0 }}>{m.title}</h3>
               </div>
               <p className="blog-summary" style={{ margin: '4px 0' }}>{m.details}</p>
               <div className="blog-meta" style={{ marginTop: '8px' }}>
-                <span className="anime-genre" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', color: m.color, border: '1px solid ' + m.color }}>
+                <span className="anime-genre" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', color: m.color, border: \`1px solid \${m.color}\` }}>
                   {m.role}
                 </span>
                 <span style={{ color: '#3794ff', fontSize: '11px', cursor: 'pointer', marginLeft: 'auto' }}>
@@ -764,51 +788,186 @@ export const ContentCreation: React.FC = () => {
 };`,
 
   "Learning.tsx": `import React from 'react';
-import { GraduationCap, Award, CheckCircle } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 export const Learning: React.FC = () => {
   const learningItems = [
     { title: "System Design & Microservices", status: "In Progress", details: "Studying scalable architectures, message brokers, and load balancing." },
-    { title: "Go (Golang)", status: "Completed", details: "Learned concurrency patterns, goroutines, and channels." },
-    { title: "Solana Blockchain", status: "In Progress", details: "Writing Rust programs with the Anchor framework." }
+    { title: "Solana Blockchain", status: "Completed", details: "Writing Rust programs with the Anchor framework and building decentralized applications." },
+    { title: "Full-Stack Web Development", status: "Completed", details: "Mastered frontend interfaces with React/Next.js and backend API integration with Node.js/Express." },
+    { title: "Advanced Rust", status: "In Progress", details: "Deep diving into advanced lifetimes, smart pointers, concurrency, and macro development." },
+    { title: "LLM RAG & Gen AI", status: "In Progress", details: "Building context-aware AI applications using LLMs, vector databases, and retrieval-augmented generation." },
+    { title: "DSA & Problem Solving", status: "In Progress", details: "Solving complex algorithmic problems and mastering advanced data structures." }
   ];
 
   return (
-    <div className="learning-container">
+    <div className="learning-container fade-in">
       <h2>Learning Roadmap</h2>
       <p className="section-desc">What I am currently studying and skills I plan to master next.</p>
       <div className="learning-list">
         {learningItems.map((item) => (
           <div key={item.title} className="learning-card">
-            <GraduationCap size={24} />
-            <div>
+            <div className="learning-card-header">
+              <GraduationCap size={24} className="learning-icon" />
               <h3>{item.title}</h3>
-              <span className="status-label">{item.status}</span>
-              <p>{item.details}</p>
             </div>
+            <span className={\`status-label \${item.status.toLowerCase().replace(' ', '-')}\`}>{item.status}</span>
+            <p className="learning-details">{item.details}</p>
           </div>
         ))}
       </div>
     </div>
   );
-};`,
-
+};
+export default Learning;`,
   "Startup.tsx": `import React from 'react';
-import { Lightbulb, Users, Compass } from 'lucide-react';
+import { Youtube, ExternalLink } from 'lucide-react';
 
 export const Startup: React.FC = () => {
+  const featuredVideos = [
+    {
+      title: "What is Blockchain? - A Short Overview",
+      link: "https://www.youtube.com/watch?v=Z_7pJWsbGEI",
+      description: "A short, conceptual overview of blockchain technology, explaining decentralization, blocks, consensus, and security for beginners.",
+      badge: "Featured Video"
+    },
+    {
+      title: "Best Open Source Opportunity in 2026",
+      link: "https://www.youtube.com/watch?v=sRkkocWuYvo&pp=0gcJCTkLAYcqIYzv",
+      description: "A curated guide discussing paid open-source opportunities, internships, developer stipends, and global community contributions in 2026.",
+      badge: "Featured Video"
+    }
+  ];
+
   return (
-    <div className="startup-container">
+    <div className="startup-container fade-in">
       <h2>Startup & Side Projects</h2>
-      <p className="section-desc">Ideas and projects I am tinkering with to build the next big thing.</p>
-      <div className="startup-card">
-        <Lightbulb size={32} className="bulb-icon" />
-        <h3>DevFlow Space</h3>
-        <p>A collaborative editor and emulator suite specifically designed for full-stack cloud developers to test AWS queries and microservice interactions locally without incurring cloud expenses.</p>
+      <p className="section-desc">Ideas, projects, and featured media I am tinkering with and building.</p>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '20px' }}>
+        {/* Main Startup Brand Card */}
+        <div 
+          className="startup-card" 
+          style={{ 
+            marginTop: 0,
+            cursor: 'pointer',
+            transition: 'transform 0.2s, border-color 0.2s'
+          }}
+          onClick={() => window.open('https://www.youtube.com/@expressbymansi', '_blank')}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.borderColor = '#ff4d4d';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.borderColor = 'var(--border-light)';
+          }}
+        >
+          <div className="startup-header" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+            <img 
+              src="/ebm_logo.png" 
+              alt="EBM Logo" 
+              style={{ 
+                width: '40px', 
+                height: '40px', 
+                borderRadius: '50%', 
+                objectFit: 'cover',
+                border: '2px solid #ff0000',
+                backgroundColor: '#fff',
+                padding: '2px'
+              }} 
+            />
+            <div style={{ flex: 1 }}>
+              <h3 style={{ margin: 0, fontSize: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                Express by Mansi (EBM)
+                <ExternalLink size={14} style={{ opacity: 0.5 }} />
+              </h3>
+              <span style={{ 
+                fontSize: '11px', 
+                backgroundColor: 'rgba(255, 0, 0, 0.15)', 
+                color: '#ff4d4d', 
+                padding: '2px 8px', 
+                borderRadius: '10px',
+                fontWeight: 'bold',
+                display: 'inline-block',
+                marginTop: '4px'
+              }}>Co-Founder</span>
+            </div>
+          </div>
+          <p className="startup-desc">
+            A developer media, podcast, and education brand providing high-quality tutorials on blockchain (Solana & Anchor), AI engineering, tech guidance, and developer career roadmaps, reaching thousands of students and builders.
+          </p>
+        </div>
+
+        {/* Section Divider */}
+        <div style={{ margin: '10px 0 5px 0', borderBottom: '1px solid var(--border-light)', paddingBottom: '8px' }}>
+          <h3 style={{ fontSize: '12px', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <Youtube size={16} style={{ color: '#ff0000' }} />
+            Featured Videos & Tutorials
+          </h3>
+        </div>
+
+        {/* Video Cards */}
+        {featuredVideos.map((video, idx) => (
+          <div 
+            key={idx}
+            className="startup-card" 
+            style={{ 
+              marginTop: 0,
+              cursor: 'pointer',
+              transition: 'transform 0.2s, border-color 0.2s'
+            }}
+            onClick={() => window.open(video.link, '_blank')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.borderColor = '#ff4d4d';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.borderColor = 'var(--border-light)';
+            }}
+          >
+            <div className="startup-header" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+              <div style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1.5px solid #ff0000'
+              }}>
+                <Youtube size={20} style={{ color: '#ff0000' }} />
+              </div>
+              <div style={{ flex: 1 }}>
+                <h3 style={{ margin: 0, fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  {video.title}
+                  <ExternalLink size={12} style={{ opacity: 0.5 }} />
+                </h3>
+                <span style={{ 
+                  fontSize: '10px', 
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)', 
+                  color: 'var(--text-muted)', 
+                  padding: '1px 6px', 
+                  borderRadius: '4px',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  marginTop: '4px',
+                  border: '1px solid rgba(255, 255, 255, 0.05)'
+                }}>{video.badge}</span>
+              </div>
+            </div>
+            <p className="startup-desc" style={{ fontSize: '13px' }}>
+              {video.description}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
-};`,
+};
+export default Startup;`,
 
   "Settings.json": `{
   "workbench.colorTheme": "Mansi Dark Premium",

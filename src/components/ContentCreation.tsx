@@ -1,15 +1,23 @@
 import React from 'react';
-import { Youtube, BookOpen, PenTool } from 'lucide-react';
+import { BookOpen, PenTool, Youtube } from 'lucide-react';
 
 export const ContentCreation: React.FC = () => {
   const media = [
     {
       title: "YouTube Tech Channel (@expressbymansi)",
-      role: "Video Creator",
-      details: "Creating educational tutorials on Express.js, TypeScript patterns, and backend system designs. Focused on making complex concepts simple.",
+      role: "Video Creator & Podcaster",
+      details: "Creating educational tutorials, podcasts, and guidance videos on blockchain development, AI integration, latest technologies, and technical career roadmaps.",
       link: "https://www.youtube.com/@expressbymansi",
-      icon: Youtube,
+      image: "/ebm_logo.png",
       color: '#ff0000'
+    },
+    {
+      title: "Instagram (@expressbymansi)",
+      role: "Tech Influencer & Creator",
+      details: "Sharing daily programming tips, career guidance reels, developer humor, and updates on blockchain & AI initiatives.",
+      link: "https://www.instagram.com/expressbymansi",
+      image: "/mansi_avatar.png",
+      color: '#e1306c'
     },
     {
       title: "Medium & Dev.to Technical Blogs",
@@ -38,8 +46,24 @@ export const ContentCreation: React.FC = () => {
           const Icon = m.icon;
           return (
             <div key={m.title} className="blog-card click-card" style={{ borderLeftColor: m.color }} onClick={() => window.open(m.link, '_blank')}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <Icon size={18} style={{ color: m.color }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                {m.image ? (
+                  <img 
+                    src={m.image} 
+                    alt={m.title} 
+                    style={{ 
+                      width: '32px', 
+                      height: '32px', 
+                      borderRadius: '50%', 
+                      objectFit: 'cover',
+                      border: `1.5px solid ${m.color}`,
+                      backgroundColor: '#fff',
+                      padding: '1px'
+                    }} 
+                  />
+                ) : Icon ? (
+                  <Icon size={18} style={{ color: m.color }} />
+                ) : null}
                 <h3 style={{ margin: 0 }}>{m.title}</h3>
               </div>
               <p className="blog-summary" style={{ margin: '4px 0' }}>{m.details}</p>
