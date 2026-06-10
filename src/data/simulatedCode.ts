@@ -703,7 +703,7 @@ export const Community: React.FC = () => {
 };`,
 
   "ContentCreation.tsx": `import React from 'react';
-import { BookOpen, PenTool, Youtube } from 'lucide-react';
+import { BookOpen, Youtube } from 'lucide-react';
 
 export const ContentCreation: React.FC = () => {
   const media = [
@@ -724,20 +724,20 @@ export const ContentCreation: React.FC = () => {
       color: '#e1306c'
     },
     {
+      title: "X (Twitter) (@MansiVe61115132)",
+      role: "Web3 & Tech Builder",
+      details: "Sharing technical threads, updates on Solana/Rust development, AI tooling, developer resources, and building Express by Mansi.",
+      link: "https://x.com/MansiVe61115132",
+      image: "/mansi_avatar.png",
+      color: '#1da1f2'
+    },
+    {
       title: "Medium & Dev.to Technical Blogs",
       role: "Technical Writer",
       details: "Writing articles detailing cloud emulations, mock validation suites in Java, and TypeScript advanced generic tips. Reaching over 10k readers.",
       link: "https://github.com/mansiverma897993",
       icon: BookOpen,
       color: '#389fff'
-    },
-    {
-      title: "Interactive Documentation",
-      role: "Author",
-      details: "Writing high-quality markdown guides on developer workflows, system engineering tools, and Git workflows for junior developers.",
-      link: "https://linktr.ee/MANSIVERMA",
-      icon: PenTool,
-      color: '#89d185'
     }
   ];
 
