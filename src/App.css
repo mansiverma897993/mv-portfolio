@@ -1151,9 +1151,31 @@ body {
   background: linear-gradient(135deg, #485563 0%, #29323c 100%);
 }
 
+.gradient-roow {
+  background: linear-gradient(135deg, #f97316 0%, #b45309 100%);
+}
+
+.gradient-dnadao {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+}
+
+.gradient-gtx {
+  background: linear-gradient(135deg, #10b981 0%, #111827 100%);
+}
+
+.gradient-solchit {
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+}
+
+.gradient-gtg {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
 .window-dots {
   display: flex;
   gap: 5px;
+  position: relative;
+  z-index: 2;
 }
 
 .window-dots .dot {
@@ -1166,6 +1188,22 @@ body {
 .dot-r { background-color: #ff5f56; }
 .dot-y { background-color: #febc2e; }
 .dot-g { background-color: #28c840; }
+
+.project-visual-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.project-card-item:hover .project-visual-img {
+  transform: scale(1.05);
+}
 
 .visual-content {
   display: flex;

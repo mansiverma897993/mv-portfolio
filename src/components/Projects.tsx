@@ -1,31 +1,47 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { ExternalLink, Github, Cpu, Globe, MessageSquareCode } from 'lucide-react';
+import { ExternalLink, Github, Cpu, Globe, MessageSquareCode, Network, Dna, Shield, Coins, Search } from 'lucide-react';
 
 export const Projects: React.FC = () => {
   const { projects } = portfolioData;
 
   // Render a custom mockup icon/design based on project title
   const renderProjectIcon = (title: string) => {
-    switch (title.toLowerCase()) {
-      case 'athenamock':
-        return <Cpu size={36} className="project-feature-icon athena-icon" />;
-      case 'chatai playground':
-        return <MessageSquareCode size={36} className="project-feature-icon chat-icon" />;
-      default:
-        return <Globe size={36} className="project-feature-icon default-icon" />;
+    const t = title.toLowerCase();
+    if (t.includes('roow')) {
+      return <Network size={36} className="project-feature-icon roow-icon" />;
     }
+    if (t.includes('dna')) {
+      return <Dna size={36} className="project-feature-icon dna-icon" />;
+    }
+    if (t.includes('gtx')) {
+      return <Shield size={36} className="project-feature-icon gtx-icon" />;
+    }
+    if (t.includes('solchit')) {
+      return <Coins size={36} className="project-feature-icon solchit-icon" />;
+    }
+    if (t.includes('gtg') || t.includes('good to go')) {
+      return <Search size={36} className="project-feature-icon gtg-icon" />;
+    }
+    if (t.includes('athenamock')) {
+      return <Cpu size={36} className="project-feature-icon athena-icon" />;
+    }
+    if (t.includes('chatai')) {
+      return <MessageSquareCode size={36} className="project-feature-icon chat-icon" />;
+    }
+    return <Globe size={36} className="project-feature-icon default-icon" />;
   };
 
   const getGradientClass = (title: string) => {
-    switch (title.toLowerCase()) {
-      case 'athenamock':
-        return 'gradient-athena';
-      case 'chatai playground':
-        return 'gradient-chat';
-      default:
-        return 'gradient-portfolio';
-    }
+    const t = title.toLowerCase();
+    if (t.includes('roow')) return 'gradient-roow';
+    if (t.includes('dna')) return 'gradient-dnadao';
+    if (t.includes('gtx')) return 'gradient-gtx';
+    if (t.includes('solchit')) return 'gradient-solchit';
+    if (t.includes('gtg') || t.includes('good to go')) return 'gradient-gtg';
+    if (t.includes('athenamock')) return 'gradient-athena';
+    if (t.includes('chatai')) return 'gradient-chat';
+    return 'gradient-portfolio';
   };
 
   return (
@@ -43,10 +59,18 @@ export const Projects: React.FC = () => {
                 <span className="dot dot-y"></span>
                 <span className="dot dot-g"></span>
               </div>
-              <div className="visual-content">
-                {renderProjectIcon(proj.title)}
-                <span className="visual-project-title">{proj.title}</span>
-              </div>
+              {proj.image ? (
+                <img 
+                  src={proj.image} 
+                  alt={proj.title} 
+                  className="project-visual-img"
+                />
+              ) : (
+                <div className="visual-content">
+                  {renderProjectIcon(proj.title)}
+                  <span className="visual-project-title">{proj.title}</span>
+                </div>
+              )}
             </div>
             
             {/* Project Details */}

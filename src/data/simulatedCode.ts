@@ -167,36 +167,38 @@ export const Experience: React.FC = () => {
 };`,
 
   "Skills.json": `{
-  "programmingLanguages": [
+  "Languages": [
     "C++",
     "C",
     "Rust",
     "Python",
     "Go (Golang)",
+    "JavaScript (ES6+)",
     "TypeScript"
   ],
-  "fullStack": {
-    "frontend": [
-      "HTML5",
-      "CSS3",
-      "React.js",
-      "Next.js",
-      "Tailwind CSS",
-      "GSAP",
-      "Responsive Web Design",
-      "3D Animated UI"
-    ],
-    "backend": [
-      "Node.js",
-      "Express.js",
-      "TypeScript",
-      "RESTful APIs",
-      "JWT Authentication",
-      "Middleware",
-      "CRUD Operations"
-    ]
-  },
-  "databasesAndCache": [
+  "Frontend": [
+    "HTML5",
+    "CSS3",
+    "React.js",
+    "Next.js",
+    "Tailwind CSS",
+    "GSAP",
+    "Responsive Web Design",
+    "3D Animated UI"
+  ],
+  "Backend": [
+    "Node.js",
+    "Express.js",
+    "FastAPI",
+    "TypeScript",
+    "RESTful APIs",
+    "JWT Authentication",
+    "Middleware",
+    "CRUD Operations",
+    "Scalable Architecture",
+    "Infrastructure"
+  ],
+  "Databases & Cache": [
     "MongoDB",
     "Mongoose",
     "PostgreSQL",
@@ -207,7 +209,7 @@ export const Experience: React.FC = () => {
     "Database Design",
     "Schema Modeling"
   ],
-  "devOpsAndCloud": [
+  "DevOps & Cloud": [
     "AWS",
     "GCP",
     "Docker",
@@ -220,7 +222,7 @@ export const Experience: React.FC = () => {
     "Deployment",
     "API Testing"
   ],
-  "aiSkills": [
+  "AI Skills": [
     "Machine Learning (ML)",
     "LLMs",
     "RAG",
@@ -228,7 +230,7 @@ export const Experience: React.FC = () => {
     "Cursor Skill",
     "Prompt Engineering"
   ],
-  "blockchainWeb3": [
+  "Blockchain & Web3": [
     "Solana",
     "Rust (Anchor)",
     "Wallet Adapter",
@@ -240,8 +242,8 @@ export const Experience: React.FC = () => {
     "Smart Contracts",
     "dApps"
   ],
-  "coreConcepts": [
-    "Data Structures & Algorithms",
+  "Core Concepts": [
+    "Data Structures and Algorithms",
     "Problem Solving",
     "OOPs",
     "DBMS",
@@ -257,11 +259,14 @@ import { ChevronDown, ChevronRight, Terminal } from 'lucide-react';
 
 export const Skills: React.FC = () => {
   const { skills } = portfolioData;
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    "Programming": true,
-    "Full-Stack Development": true,
-    "Database & Cache": true,
-    "DevOps & Cloud": true
+  
+  // Initialize all sections as expanded
+  const [expanded, setExpanded] = useState<Record<string, boolean>>(() => {
+    const initial: Record<string, boolean> = {};
+    skills.forEach(cat => {
+      initial[cat.category] = true;
+    });
+    return initial;
   });
 
   const toggleSection = (category: string) => {
@@ -300,38 +305,111 @@ export const Skills: React.FC = () => {
 
   "Projects.tsx": `import React from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { ExternalLink, Github, Folder } from 'lucide-react';
+import { ExternalLink, Github, Cpu, Globe, MessageSquareCode, Network, Dna, Shield, Coins, Search } from 'lucide-react';
 
 export const Projects: React.FC = () => {
   const { projects } = portfolioData;
 
+  // Render a custom mockup icon/design based on project title
+  const renderProjectIcon = (title: string) => {
+    const t = title.toLowerCase();
+    if (t.includes('roow')) {
+      return <Network size={36} className="project-feature-icon roow-icon" />;
+    }
+    if (t.includes('dna')) {
+      return <Dna size={36} className="project-feature-icon dna-icon" />;
+    }
+    if (t.includes('gtx')) {
+      return <Shield size={36} className="project-feature-icon gtx-icon" />;
+    }
+    if (t.includes('solchit')) {
+      return <Coins size={36} className="project-feature-icon solchit-icon" />;
+    }
+    if (t.includes('gtg') || t.includes('good to go')) {
+      return <Search size={36} className="project-feature-icon gtg-icon" />;
+    }
+    if (t.includes('athenamock')) {
+      return <Cpu size={36} className="project-feature-icon athena-icon" />;
+    }
+    if (t.includes('chatai')) {
+      return <MessageSquareCode size={36} className="project-feature-icon chat-icon" />;
+    }
+    return <Globe size={36} className="project-feature-icon default-icon" />;
+  };
+
+  const getGradientClass = (title: string) => {
+    const t = title.toLowerCase();
+    if (t.includes('roow')) return 'gradient-roow';
+    if (t.includes('dna')) return 'gradient-dnadao';
+    if (t.includes('gtx')) return 'gradient-gtx';
+    if (t.includes('solchit')) return 'gradient-solchit';
+    if (t.includes('gtg') || t.includes('good to go')) return 'gradient-gtg';
+    if (t.includes('athenamock')) return 'gradient-athena';
+    if (t.includes('chatai')) return 'gradient-chat';
+    return 'gradient-portfolio';
+  };
+
   return (
-    <div className="projects-container">
+    <div className="projects-container fade-in">
       <h2>Projects</h2>
-      <p className="section-desc">A collection of projects I've built and contributed to.</p>
+      <p className="section-desc">A curated selection of projects I've engineered and open-sourced.</p>
       
-      <div className="projects-grid">
+      <div className="projects-grid-list">
         {projects.map((proj, idx) => (
-          <div key={idx} className="project-card">
-            <div className="project-preview-mock">
-              <Folder size={48} className="proj-mock-icon" />
-              <div className="proj-image-placeholder">{proj.title} Demo</div>
+          <div key={idx} className="project-card-item">
+            {/* Project Mock Visual */}
+            <div className={\`project-card-visual \${getGradientClass(proj.title)}\`}>
+              <div className="window-dots">
+                <span className="dot dot-r"></span>
+                <span className="dot dot-y"></span>
+                <span className="dot dot-g"></span>
+              </div>
+              {proj.image ? (
+                <img 
+                  src={proj.image} 
+                  alt={proj.title} 
+                  className="project-visual-img"
+                />
+              ) : (
+                <div className="visual-content">
+                  {renderProjectIcon(proj.title)}
+                  <span className="visual-project-title">{proj.title}</span>
+                </div>
+              )}
             </div>
             
-            <div className="project-info">
-              <h3>{proj.title}</h3>
+            {/* Project Details */}
+            <div className="project-card-body">
+              <h3 className="project-title">{proj.title}</h3>
               <p className="project-desc">{proj.description}</p>
               
-              <div className="project-tags">
+              <div className="project-tags-wrap">
                 {proj.tags.map(tag => (
-                  <span key={tag} className="tech-tag">{tag}</span>
+                  <span key={tag} className="project-tag-pill">{tag}</span>
                 ))}
               </div>
               
-              <div className="project-links">
-                <a href={proj.liveLink} target="_blank" rel="noreferrer" className="link-item">
-                  <ExternalLink size={14} /> Live Demo
+              <div className="project-action-links">
+                <a 
+                  href={proj.liveLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="project-link-btn primary-btn"
+                >
+                  <ExternalLink size={14} />
+                  <span>Live Demo</span>
                 </a>
+                {proj.githubLink && (
+                  <a 
+                    href={proj.githubLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="project-link-btn secondary-btn"
+                  >
+                    <Github size={14} />
+                    <span>Source Code</span>
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -447,65 +525,110 @@ export const Contact: React.FC = () => {
 };`,
 
   "OpenSource.tsx": `import React from 'react';
-import { GitPullRequest, Star } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
+import { GitPullRequest, Star, Briefcase, Calendar, MapPin } from 'lucide-react';
 
 export const OpenSource: React.FC = () => {
+  const osExperience = portfolioData.experience.find(exp => exp.role === "Open Source Contributor");
+
   const contributions = [
     {
-      project: "aws-athena-emulator",
-      repo: "entropretty/aws-athena-emulator",
-      description: "Contributed validation logic, query validation checks, and integration tests to the Athena emulator mock layer.",
-      stars: 124,
+      project: "solana-templates",
+      repo: "solana-foundation/templates",
+      description: "Contributed starter template schemas, Anchor contract layouts, and tooling templates to the official Solana Foundation repository.",
+      stars: 450,
       role: "Contributor",
-      type: "Pull Request merged"
+      type: "Pull Request Merged"
     },
     {
-      project: "solana-anchor-dao",
-      repo: "solana-labs/anchor-dao-template",
-      description: "Contributed smart contract governance modules and on-chain voting program code using the Anchor framework.",
-      stars: 350,
+      project: "geekroom-kiet",
+      repo: "GEEK-ROOM-KIET/geekroom-kiet",
+      description: "Contributed registration workflows, community portal features, and UI/UX tweaks for the campus geek room platform.",
+      stars: 32,
       role: "Contributor",
-      type: "Feature addition"
-    },
-    {
-      project: "vscode-emulation-core",
-      repo: "vscode-contrib/emulation-core",
-      description: "Improved tab focus state management, terminal shell input buffer validation, and responsive pane dimensions.",
-      stars: 88,
-      role: "Contributor",
-      type: "Bug fix merged"
+      type: "Pull Request Merged"
     }
   ];
 
   return (
     <div className="anime-container fade-in">
       <h2>Open Source Contributions</h2>
-      <p className="section-desc">My contributions to community developer tools and open source repositories.</p>
+      <p className="section-desc">My contributions to community developer tools, programs, and open source repositories.</p>
+
+      {osExperience && (
+        <div className="os-experience-section" style={{ marginBottom: '30px' }}>
+          <h3 style={{ fontSize: '15px', color: 'var(--text-bright)', marginBottom: '12px', fontWeight: 'bold' }}>Programs & Mentorships</h3>
+          <div className="timeline-container" style={{ margin: 0, paddingLeft: 0 }}>
+            <div className="timeline-item" style={{ paddingBottom: 0 }}>
+              <div className="timeline-badge-container">
+                <div className="timeline-badge current-badge">
+                  <Briefcase size={14} />
+                </div>
+              </div>
+              
+              <div className="timeline-content-card" style={{ margin: 0 }}>
+                <div className="timeline-card-header">
+                  <div>
+                    <h3 className="role-title">\${osExperience.role}</h3>
+                    <h4 className="company-title">\${osExperience.company}</h4>
+                  </div>
+                  {osExperience.current && (
+                    <span className="current-status-tag">Current</span>
+                  )}
+                </div>
+                
+                <div className="timeline-meta">
+                  <span className="meta-item">
+                    <Calendar size={12} />
+                    <span>\${osExperience.period}</span>
+                  </span>
+                  <span className="meta-item">
+                    <MapPin size={12} />
+                    <span>\${osExperience.location}</span>
+                  </span>
+                </div>
+                
+                <p className="experience-description">\${osExperience.description}</p>
+                
+                <div className="tech-tags-list">
+                  {osExperience.tags.map(tag => (
+                    <span key={tag} className="tech-tag-item">\${tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <h3 style={{ fontSize: '15px', color: 'var(--text-bright)', marginBottom: '12px', fontWeight: 'bold' }}>Merged Pull Requests & Repositories</h3>
       <div className="anime-grid">
         {contributions.map((c) => (
           <div key={c.project} className="anime-card" style={{ borderBottomColor: '#89d185' }}>
             <div className="anime-card-header">
               <GitPullRequest size={20} style={{ color: '#89d185', marginRight: '8px' }} />
-              <h3 style={{ fontSize: '14px', fontFamily: 'monospace' }}>{c.repo}</h3>
+              <h3 style={{ fontSize: '14px', fontFamily: 'monospace' }}>\${c.repo}</h3>
             </div>
             <p style={{ fontSize: '13px', lineHeight: '1.4', margin: '4px 0', color: '#cccccc' }}>
-              {c.description}
+              \${c.description}
             </p>
             <div className="anime-meta" style={{ marginTop: 'auto', paddingTop: '8px' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                <Star size={12} fill="#cca700" stroke="#cca700" /> {c.stars} stars
+                <Star size={12} fill="#cca700" stroke="#cca700" /> \${c.stars} stars
               </span>
-              <span>{c.type}</span>
+              <span>\${c.type}</span>
             </div>
             <span className="anime-genre" style={{ backgroundColor: 'rgba(137, 209, 133, 0.15)', color: '#a3e635' }}>
-              {c.role}
+              \${c.role}
             </span>
           </div>
         ))}
       </div>
     </div>
   );
-};`,
+};
+
+export default OpenSource;`,
 
   "Community.tsx": `import React from 'react';
 import { Users, Award, Landmark } from 'lucide-react';

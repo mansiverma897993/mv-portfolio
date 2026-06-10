@@ -1,38 +1,81 @@
 import React from 'react';
-import { GitPullRequest, Star } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
+import { GitPullRequest, Star, Briefcase, Calendar, MapPin } from 'lucide-react';
 
 export const OpenSource: React.FC = () => {
+  const osExperience = portfolioData.experience.find(exp => exp.role === "Open Source Contributor");
+
   const contributions = [
     {
-      project: "aws-athena-emulator",
-      repo: "entropretty/aws-athena-emulator",
-      description: "Contributed validation logic, query validation checks, and integration tests to the Athena emulator mock layer.",
-      stars: 124,
+      project: "solana-templates",
+      repo: "solana-foundation/templates",
+      description: "Contributed starter template schemas, Anchor contract layouts, and tooling templates to the official Solana Foundation repository.",
+      stars: 450,
       role: "Contributor",
-      type: "Pull Request merged"
+      type: "Pull Request Merged"
     },
     {
-      project: "solana-anchor-dao",
-      repo: "solana-labs/anchor-dao-template",
-      description: "Contributed smart contract governance modules and on-chain voting program code using the Anchor framework.",
-      stars: 350,
+      project: "geekroom-kiet",
+      repo: "GEEK-ROOM-KIET/geekroom-kiet",
+      description: "Contributed registration workflows, community portal features, and UI/UX tweaks for the campus geek room platform.",
+      stars: 32,
       role: "Contributor",
-      type: "Feature addition"
-    },
-    {
-      project: "vscode-emulation-core",
-      repo: "vscode-contrib/emulation-core",
-      description: "Improved tab focus state management, terminal shell input buffer validation, and responsive pane dimensions.",
-      stars: 88,
-      role: "Contributor",
-      type: "Bug fix merged"
+      type: "Pull Request Merged"
     }
   ];
 
   return (
     <div className="anime-container fade-in">
       <h2>Open Source Contributions</h2>
-      <p className="section-desc">My contributions to community developer tools and open source repositories.</p>
+      <p className="section-desc">My contributions to community developer tools, programs, and open source repositories.</p>
+
+      {osExperience && (
+        <div className="os-experience-section" style={{ marginBottom: '30px' }}>
+          <h3 style={{ fontSize: '15px', color: 'var(--text-bright)', marginBottom: '12px', fontWeight: 'bold' }}>Programs & Mentorships</h3>
+          <div className="timeline-container" style={{ margin: 0, paddingLeft: 0 }}>
+            <div className="timeline-item" style={{ paddingBottom: 0 }}>
+              <div className="timeline-badge-container">
+                <div className="timeline-badge current-badge">
+                  <Briefcase size={14} />
+                </div>
+              </div>
+              
+              <div className="timeline-content-card" style={{ margin: 0 }}>
+                <div className="timeline-card-header">
+                  <div>
+                    <h3 className="role-title">{osExperience.role}</h3>
+                    <h4 className="company-title">{osExperience.company}</h4>
+                  </div>
+                  {osExperience.current && (
+                    <span className="current-status-tag">Current</span>
+                  )}
+                </div>
+                
+                <div className="timeline-meta">
+                  <span className="meta-item">
+                    <Calendar size={12} />
+                    <span>{osExperience.period}</span>
+                  </span>
+                  <span className="meta-item">
+                    <MapPin size={12} />
+                    <span>{osExperience.location}</span>
+                  </span>
+                </div>
+                
+                <p className="experience-description">{osExperience.description}</p>
+                
+                <div className="tech-tags-list">
+                  {osExperience.tags.map(tag => (
+                    <span key={tag} className="tech-tag-item">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <h3 style={{ fontSize: '15px', color: 'var(--text-bright)', marginBottom: '12px', fontWeight: 'bold' }}>Merged Pull Requests & Repositories</h3>
       <div className="anime-grid">
         {contributions.map((c) => (
           <div key={c.project} className="anime-card" style={{ borderBottomColor: '#89d185' }}>
@@ -58,4 +101,5 @@ export const OpenSource: React.FC = () => {
     </div>
   );
 };
+
 export default OpenSource;
