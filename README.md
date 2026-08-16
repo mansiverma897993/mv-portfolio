@@ -1,73 +1,119 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mansiverma897993/mv-portfolio/main/screenshots/portfolio.png" alt="MV Portfolio - VS Code themed developer portfolio" width="100%" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">⌨️ MV Portfolio — VS Code Themed Developer Portfolio</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  An interactive software developer portfolio of <strong>MAN$I VERMA</strong>, built to look and behave like the VS Code editor — complete with a simulated file explorer, syntax-highlighted code views, an integrated terminal console, and a live status bar.
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<p align="center">
+  <a href="https://mverma.vercel.app"><strong>🌐 Live Demo</strong></a> ·
+  <a href="#features">Features</a> ·
+  <a href="#getting-started">Getting Started</a> ·
+  <a href="#project-structure">Project Structure</a> ·
+  <a href="#tech-stack">Tech Stack</a> ·
+  <a href="#license">License</a>
+</p>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **VS Code UI Recreation** — A pixel-faithful VS Code window: title bar with window controls, activity bar, explorer sidebar, editor tabs, breadcrumbs, and a status bar with a live clock.
+- **Real File Structure** — Navigate the portfolio like source files (`Welcome.tsx`, `Experience.tsx`, `Skills.json`, `Projects.tsx`, `contact.tsx`, etc.) in an Explorer sidebar.
+- **Preview / Code Toggle** — Switch any section between a **visual preview** and a **syntax-highlighted code view**.
+- **Interactive Explorer & Search** — Expandable folders, collapsible sidebar, and file-name search (Ctrl+P style).
+- **Integrated Terminal Console** — A working terminal with fun commands: `help`, `about`, `skills`, `deploy`, `neofetch`, and `clear`.
+- **Interactive Contact Console** — Simulated VS Code style contact form.
+- **Live Clock & Status Bar** — Real-time time, git branch, port, and language indicators.
+- **Multiple Sections** — Welcome, Experience, Skills, Projects, Achievements, Resume, Open Source, Community, Content Creation, Learning, Startup.
+- **Fully Responsive & Themeable** — Dark developer theme that adapts across devices.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [Node.js](https://nodejs.org/) (v18+)
+- [npm](https://www.npmjs.com/) (or pnpm / yarn)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/mansiverma897993/mv-portfolio.git
+cd mv-portfolio
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build      # Type-check + production build
+npm run preview    # Preview the production build locally
+npm run lint       # Run ESLint
 ```
+
+## 🗂️ Project Structure
+
+```
+mv-portfolio/
+├── public/                    # Static assets & demo images
+├── src/
+│   ├── assets/                # Icons & hero images
+│   ├── components/            # VS Code-like UI sections
+│   │   ├── Welcome.tsx        # Landing / welcome file
+│   │   ├── Experience.tsx     # Work experience
+│   │   ├── Skills.tsx         # Skills (rendered as Skills.json)
+│   │   ├── Projects.tsx       # Projects showcase
+│   │   ├── Achievements.tsx   # Certificates & achievements
+│   │   ├── ResumeViewer.tsx   # Resume viewer
+│   │   ├── contact.tsx        # Contact console
+│   │   ├── OpenSource.tsx     # Open source contributions
+│   │   ├── Community.tsx      # Community involvement
+│   │   ├── ContentCreation.tsx# Content creation
+│   │   ├── Learning.tsx       # Learning journey
+│   │   ├── Startup.tsx        # Startup ventures
+│   │   ├── CodeViewer.tsx     # Syntax-highlighted code views
+│   │   └── ...
+│   ├── data/
+│   │   ├── portfolioData.ts   # All portfolio content (single source of truth)
+│   │   └── simulatedCode.ts   # Simulated source code for code view
+│   ├── App.tsx                # VS Code shell layout
+│   ├── App.css                # VS Code theme styles
+│   ├── index.css
+│   └── main.tsx
+├── index.html
+├── vercel.json                # SPA rewrites for Vercel
+└── package.json
+```
+
+> 💡 All content lives in `src/data/portfolioData.ts` — edit that file to update your name, experience, skills, projects, and certificates without touching the UI.
+
+## 🧰 Tech Stack
+
+| Layer       | Technology                                            |
+| ----------- | ----------------------------------------------------- |
+| Framework   | [React](https://react.dev/) 19 + [TypeScript](https://www.typescriptlang.org/) |
+| Build Tool  | [Vite](https://vitejs.dev/)                           |
+| Styling     | Vanilla CSS (custom VS Code theme)                    |
+| Icons       | [Lucide React](https://lucide.dev/)                   |
+| Linting     | ESLint + typescript-eslint                            |
+| Deployment  | [Vercel](https://vercel.com/)                          |
+
+## 🔗 Links
+
+- **Live Demo:** https://mverma.vercel.app
+- **GitHub:** https://github.com/mansiverma897993
+
+## 📄 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
